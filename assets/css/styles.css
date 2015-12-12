@@ -1,4 +1,4 @@
-/*   
+/*
  * Template Name: Matrimony - Responsive website template for webdding invitations
  * Version: 1.0
  * Author: Xiaoying Riley at 3rd Wave Media
@@ -732,7 +732,7 @@ label {
 .message-container .thank-you {
   font-size: 46px;
   color: #f4af9c;
-  margin-bottom: 15px;
+  margin-bottom: 0;
 }
 .message-container .signature {
   font-size: 28px;
@@ -745,7 +745,7 @@ label {
 }
 .couple-profile {
   position: absolute;
-  bottom: -120px;
+  bottom: -250px;
   left: 50%;
   margin-left: -163px;
   width: 326px;
