@@ -116,64 +116,28 @@ $(document).ready(function() {
     //Instafeed.js - add Instagram photos to your website
     //Ref: http://instafeedjs.com/
 
-    var loadButton = document.getElementById('load-more');
     var feed = new Instafeed({
-            limit: 28,
+            limit: 100,
             get: 'tagged',
             tagName: 'marcelaeigor2016',
-            clientId: "467ede5a6b9b48ae8e03f4e2582aeeb3", /* IMPORTANT: REPLACE THE DEMO CLIENTID WITH YOUR CLIENTID! Find out your clientID: http://darkwhispering.com/how-to/get-a-instagram-client_id-key */
+            clientId: "467ede5a6b9b48ae8e03f4e2582aeeb3",
             resolution: 'thumbnail',
             template: '<a class="instagram-item item" href="{{link}}" target="_blank"><img class="img-responsive" src="{{image}}" /></a>',
-            sortBy: 'most-liked',
+            sortBy: 'random',
           // every time we load more, run this function
           after: function() {
             // disable button if no more results to load
             if (!this.hasNext()) {
-              loadButton.setAttribute('disabled', 'disabled');
+              $('#load-more').toggle();
             }
           },
     });
 
     // bind the load more button
-    loadButton.addEventListener('click', function() {
+    $('#load-more').on('click', function() {
       feed.next();
     });
 
     // run our feed!
     feed.run();
-
-    /* ===== Packery ===== */
-    //Ref: http://packery.metafizzy.co/
-    //Ref: http://imagesloaded.desandro.com/
-
-    var $container = $('#photos-wrapper');
-
-    // init
-    $container.imagesLoaded(function () {
-        $container.packery({
-            itemSelector: '.item',
-            percentPosition: true
-        });
-    });
-
-
-    /* ======= RSVP Form (Dependent form field) ============ */
-    $('#cguests').on("change", function(){
-
-        if ($(this).val() == "") {
-            $('.guestinfo-group').slideUp(); //hide
-            console.log('not selected');
-        } else if ($(this).val() == 'No Guests' ) {
-            $('.guestinfo-group').slideUp(); //hide
-            console.log('No guests');
-            $('#cguestinfo').val('No Guests'); //Pass data to the field so mailer.php can send the form.
-
-        } else {
-            $('.guestinfo-group').slideDown(); //show
-            $('#cguestinfo').val(''); //Clear data
-            console.log('Has guests');
-        }
-
-
-    });
 });
