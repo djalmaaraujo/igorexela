@@ -64,10 +64,10 @@ $(document).ready(function() {
         seconds = parseInt(seconds_left % 60);
 
         // format countdown string + set tag value.
-        days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit script">Days</span>';
-        hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit script">Hrs</span>';
+        days_span.innerHTML = '<span class="number">' + days + '</span>' + '<span class="unit script">Dias</span>';
+        hours_span.innerHTML = '<span class="number">' + hours + '</span>' + '<span class="unit script">Hors</span>';
         minutes_span.innerHTML = '<span class="number">' + minutes + '</span>' + '<span class="unit script">Mins</span>';
-        secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit script">Secs</span>';
+        secs_span.innerHTML = '<span class="number">' + seconds + '</span>' + '<span class="unit script">Segs</span>';
 
 
         //countdown.innerHTML = days + "d, " + hours + "h, "
